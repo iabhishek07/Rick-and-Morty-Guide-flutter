@@ -1,4 +1,4 @@
-# rickandmorty
+# Rick and Morty Guide built in FLUTTER🚀
 
 A new Flutter project.
 
