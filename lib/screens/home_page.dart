@@ -46,88 +46,96 @@ class _HomePageState extends State<HomePage> {
       body: ListView.builder(
         itemCount: data == null ? 0 : data.length,
         itemBuilder: (BuildContext context, int index) {
-          return Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Card(
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(13.0),
-              ),
-              color: Color(0xFF3B3F43),
-              child: Container(
-                height: 140,
-                child: Row(
-                  children: <Widget>[
-                    Container(
-                      height: 140,
-                      width: 140,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.horizontal(
-                          left: Radius.circular(13.0),
-                        ),
-                        image: DecorationImage(
-                          image: NetworkImage(
-                            data[index]["image"],
-                          ),
-                          fit: BoxFit.cover,
-                        ),
+          return Container(
+            height: 145,
+            margin: EdgeInsets.symmetric(vertical: 14.0, horizontal: 20.0),
+            child: Stack(
+              children: <Widget>[
+                Container(
+                  height: 143.0,
+                  margin: EdgeInsets.only(left: 46.0),
+                  decoration: BoxDecoration(
+                    color: Color(0xFF3B3F43),
+                    shape: BoxShape.rectangle,
+                    borderRadius: BorderRadius.circular(8.0),
+                    boxShadow: <BoxShadow>[
+                      BoxShadow(
+                        color: Colors.black26,
+                        blurRadius: 10.0,
+                        offset: Offset(0.0, 10.0),
                       ),
-                    ),
-                    SizedBox(width: 17.0),
-                    Container(
-                      child: Flexible(
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          crossAxisAlignment: CrossAxisAlignment.start,
+                    ],
+                  ),
+                  child: Container(
+                    margin: EdgeInsets.fromLTRB(100.0, 16.0, 16.0, 16.0),
+                    constraints: BoxConstraints.expand(),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: <Widget>[
+                        Text(
+                          data[index]["name"],
+                          overflow: TextOverflow.ellipsis,
+                          style: TextStyle(
+                            fontSize: 25.0,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white,
+                          ),
+                        ),
+                        SizedBox(height: 8.0),
+                        Row(
                           children: <Widget>[
-                            Text(
-                              data[index]["name"],
-                              overflow: TextOverflow.ellipsis,
-                              style: TextStyle(
-                                fontSize: 25.0,
-                                fontWeight: FontWeight.bold,
-                                color: Colors.white,
+                            Container(
+                              height: 12,
+                              width: 12,
+                              decoration: BoxDecoration(
+                                shape: BoxShape.circle,
+                                color: Colors.green,
                               ),
                             ),
-                            Row(
-                              children: <Widget>[
-                                Container(
-                                  height: 12,
-                                  width: 12,
-                                  decoration: BoxDecoration(
-                                    shape: BoxShape.circle,
-                                    color: Colors.green,
-                                  ),
-                                ),
-                                SizedBox(width: 5),
-                                Text(
-                                  "${data[index]["status"]} - ${data[index]["species"]}",
-                                  style: TextStyle(color: Colors.white, fontSize: 17, fontWeight: FontWeight.w400),
-                                ),
-                              ],
-                            ),
+                            SizedBox(width: 5),
                             Text(
-                              "Origin:",
+                              "${data[index]["status"]} - ${data[index]["species"]}",
                               style: TextStyle(
-                                color: Color(0xFF929293),
-                                fontSize: 15,
-                                fontWeight: FontWeight.w700,
-                              ),
+                                  color: Colors.white,
+                                  fontSize: 17,
+                                  fontWeight: FontWeight.w400),
                             ),
-                            Text(
-                              data[index]["origin"]["name"],
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 15,
-                                fontWeight: FontWeight.w500
-                              ),
-                            )
                           ],
                         ),
-                      ),
+                        SizedBox(
+                          height: 8.0,
+                        ),
+                        Text(
+                          "Origin:",
+                          style: TextStyle(
+                            color: Color(0xFF929293),
+                            fontSize: 15,
+                            fontWeight: FontWeight.w700,
+                          ),
+                        ),
+                        SizedBox(height: 5.0),
+                        Text(
+                          data[index]["origin"]["name"],
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 15,
+                              fontWeight: FontWeight.w500),
+                        )
+                      ],
                     ),
-                  ],
+                  ),
                 ),
-              ),
+                Container(
+                  margin: EdgeInsets.symmetric(vertical: 16.0),
+                  alignment: FractionalOffset.centerLeft,
+                  child: CircleAvatar(
+                    radius: 60,
+                    backgroundImage: NetworkImage(
+                      data[index]["image"],
+                    ),
+                  ),
+                )
+              ],
             ),
           );
         },
