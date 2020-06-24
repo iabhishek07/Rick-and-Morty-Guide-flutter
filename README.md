@@ -1,16 +1,26 @@
-# Rick and Morty Guide built in FLUTTER🚀
+<h1 align="center"><strong>The Rick & Morty App</strong></h1>
 
-A new Flutter project.
+<p align="center">This Application is made in <strong>Flutter🚀 & Dart🎯</strong></p>
 
-## Getting Started
+## Code Style 
 
-This project is a starting point for a Flutter application.
+[![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat)](https://github.com/feross/standard)
 
-A few resources to get you started if this is your first Flutter project:
+## Tech/framework used
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+<b>Built With</b>
+- [Flutter](https://flutter.dev) 📱
+- [Dart](https://dart.dev) 🎯
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Screenshots/ Demo
+### Android
+
+|                   1.                    |                    2                    |            3                |
+| :--------------------------------------:| :-------------------------------------: |:--------------------------: |
+|<img src="/DemoA.gif" height="500em"/>    | <img src="/AndroidH.png" height="500em"/>   |<img src="/AndroidD.png" height="500em"/>|
+
+### iOS
+
+|                   1.                    |                    2                    |  
+| :--------------------------------------:| :-------------------------------------: | 
+|<img src="/iosH.png" height="500em"/>| <img src="/iosD.png" height="500em"/>|
